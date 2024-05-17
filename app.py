@@ -1,23 +1,33 @@
-from flask import Flask, render_template, request, redirect, url_for, session, g
-import sqlite3
+from flask import Flask, render_template, request, redirect, url_for, session
+import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = 'sua_chave_secreta'
+app.secret_key = 'sua_chave_secreta'  # Substitua pela sua chave secreta
 
-USUARIO_FIXO = 'usuario'
-SENHA_FIXA = 'senha'
-
-# Configuração do banco de dados SQLite
-DATABASE = 'banco_de_dados.db'
+# Configurações do banco de dados MySQL no Railway
+db_config = {
+    'user': 'root',
+    'password': 'fzwiXJlnSSkEECUNjOHqiDKlfKvvmGri',
+    'host': 'roundhouse.proxy.rlwy.net',
+    'database': 'railway',
+    'port': '47387',
+}
 
 def conectar_bd():
-    return sqlite3.connect(DATABASE)
+    return mysql.connector.connect(**db_config)
 
 def criar_tabela():
-    with conectar_bd() as con:
-        cur = con.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT, telefone TEXT)")
-        con.commit()
+    con = conectar_bd()
+    cur = con.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS bdform (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nome VARCHAR(255) NOT NULL,
+            telefone VARCHAR(255) NOT NULL
+        )
+    """)
+    con.commit()
+    con.close()
 
 @app.route("/")
 def index():
@@ -28,7 +38,7 @@ def login():
     usuario = request.form['usuario']
     senha = request.form['senha']
 
-    if usuario == USUARIO_FIXO and senha == SENHA_FIXA:
+    if usuario == 'usuario_fixo' and senha == 'senha_fixa':
         session['usuario'] = usuario
         return redirect(url_for('pagina_protegida'))
     else:
@@ -47,15 +57,16 @@ def enviar_dados():
         nome = request.form['nome']
         telefone = request.form['telefone']
 
-        with conectar_bd() as con:
-            cur = con.cursor()
-            cur.execute("INSERT INTO usuarios (nome, telefone) VALUES (?, ?)", (nome, telefone))
-            con.commit()
+        con = conectar_bd()
+        cur = con.cursor()
+        cur.execute("INSERT INTO bdform (nome, telefone) VALUES (%s, %s)", (nome, telefone))
+        con.commit()
+        con.close()
 
         return 'Dados enviados com sucesso!'
 
     return render_template("enviar_dados.html")
 
 if __name__ == '__main__':
-    criar_tabela()  # Certificar-se de que a tabela foi criada antes de iniciar o aplicativo Flask
+    criar_tabela()
     app.run(debug=True)
