@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/anime.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="icon" href="/assets/img/icones/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/swiper.css">
+    <title>Glowing Agency</title>
+    
+    
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/Sem nome (166 x 90 px).svg" alt="Logo"></a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="hosts.html" class="nav-link">Hosts</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></li>
+                    <li class="nav-item"><a href="faq.html" class="nav-link">Perguntas</a></li>
+                    <li class="nav-item"><a href="form.html" class="nav-link">Inscrição</a></li>
+
+                </ul>
+            </div>
+            
+            <!--<div class="login-button">
+                <a href="form.html"><button id="buttonform" class="animated-button"></a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Inscrição </span>
+                    <span class="circle"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+                  
+            </div>
+          -->
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="hosts.html" class="nav-link">Hosts</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">Quem Somos</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">Perguntas</a></li>
+                <li class="nav-item"><a href="form.html" class="nav-link">Inscrição</a></li>
+
+            </ul>
+
+            <!--<div class="login-button">
+              <a href="form.html"><button id="buttonform" class="animated-button"></a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Inscrição </span>
+                    <span class="circle"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+            </div>
+          -->
+        </div>
+    </header>
+    <main>
+      <!--<div class="cp1">
+        <h1>Porquê ser uma agenciada?</h1>
+      </div>-->
+      <div class="homepg">
+
+      </div>
+      <style>
+       
+        .swiper-container {
+          margin-top: 20px;
+          width: 100%;
+          overflow: hidden;
+          
+            height: 100%; /* Defina a altura desejada */
+
+            
+            
+        }
+
+        .swiper-slide {
+            text-align: center;
+
+            font-size: 18px;
+            
+            /* Outros estilos desejados */
+        }
+        .swiper-slide img {
+            width: 100%;
+            
+        }
+
+        .swiper-pagination {
+            position: relative;
+            bottom: 10px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            opacity: 0.5;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        .swiper-wrapper img{
+            max-width: 85%;
+        }
+    </style>
+    <!-- Container do Swiper -->
+    <div class="swiper-container">
+      <!-- Slides -->
+      <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide"><img src="/assets/img/index/campanha01.svg" alt="Imagem 1"></div>
+          <div class="swiper-slide"><img src="/assets/img/index/campanha.svg" alt="Imagem 2"></div>
+
+
+
+
+
+
+         
+          <!-- Slide 2 -->
+         
+          <!-- Adicione quantos slides você precisar -->
+      </div>
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+      <!-- Botões de navegação (opcional) -->
+      <!-- <div class="swiper-button-prev"></div> 
+      <div class="swiper-button-next"></div>-->
+  </div>
+
+  <!-- Link para o arquivo JavaScript do Swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Inicialize o Swiper -->
+  <script>
+      var swiper = new Swiper('.swiper-container', {
+          // Parâmetros de configuração
+          autoplay: {
+              delay: 5000, // Tempo de espera entre os slides em milissegundos (5 segundos neste exemplo)
+          },
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+      });
+  </script>
+
+      <section class="cp2">
+        <section class="welcome-page">
+          <div>
+            <h1> Quem Somos?</h1>
+            <p><br></p>
+            <p>O intuito da Glowing é te auxiliar a brilhar no mundo das lives tendo liberdade geográfica e trabalhando somente com seu celular
+            Somos uma agência especializada em livestream. <br> <br>Estamos no mercado há mais de 2 anos desenvolvendo talentos e capacitando hosts com treinamentos atualizados e um Método
+            exclusivo que fazem pessoas comuns monetizarem o seu conteúdo com as lives no
+            Tiklok</p>
+          </div>
+          <img src="/assets/img/index/cell.png" alt="Agenciada Recebendo Presente">
+        </section>
+      </section>
+
+      <div class="agc">
+        <h2> SOMOS +50 <br> AGENCIADAS</h2>
+
+      </div>
+
+      
+      <div class="space">
+
+      </div>
+      <section class="requisitos">
+        <div class="req-box"></div>
+          
+      </section>
+      <section class="break-page">
+        
+
+      </section>
+       <section class="form1">
+            <iframe class="form2" src="https://docs.google.com/forms/d/e/1FAIpQLSfnmORytYR-8OOGytJ_xWne-FzhIFjJLV3_MvT8TVRhfeekdg/viewform?embedded=true" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Carregando…</iframe>
+       </section>
+        
+    </main>
+    <footer>
+      <p>©2024 Desenvolvido by Glowing Agency - Todos os direitos reservados  </p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
